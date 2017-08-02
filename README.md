@@ -25,11 +25,11 @@ Your assignment is to resolve the records to their respective entities, and writ
 .csv named “DBLP_Scholar_perfectMapping_[YourName].csv” that only contain the
 resolved entities. The final .csv file should include the following column headings:
 
-# idDBLP: The matched DBLP.csv id
-# idScholar: The matched Scholar.csv id
-# DBLP_Match: The ROW_ID of the DBLP.csv file
-# Scholar_Match: The ROW_ID of the Scholar.csv file
-# Match_ID: A final column that combines the number from DBLP_Match and Scholar_Match, separated by an underscore.
+ idDBLP: The matched DBLP.csv id
+ idScholar: The matched Scholar.csv id
+ DBLP_Match: The ROW_ID of the DBLP.csv file
+ Scholar_Match: The ROW_ID of the Scholar.csv file
+ Match_ID: A final column that combines the number from DBLP_Match and Scholar_Match, separated by an underscore.
 
 The first row is provided as an example:
 idDBLP            idScholar   DBLP_Match  Scholar_Match  Match_ID
