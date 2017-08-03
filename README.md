@@ -36,7 +36,10 @@ idDBLP            idScholar   DBLP_Match  Scholar_Match  Match_ID
 conf/vldb/Levy96 lDTPyBMtHVwJ 1996        14            1996_14
 
 # The Logic
-1) Remove any duplicates in the DBLP1 file by using Title, Author, Venue and Year as keys to identify duplicates
-2) Remove rows with Empty ScholarIDs in the Scholar.csv file
-3) Remove rows with Empty Year Entry in the Scholar.csv file as it is necessary for merging the entities from both Scholar.csv and DBLP1.csv
-4) Compare both cleaned up files based on Title, Author, and Year. When a match is found store the DBLPID, ScholarID, DBLP Row ID, Scholar Row ID, and an appended column of both DBLP Row ID and Scholar RowID
+1) Take DBLP1 as the source of truth
+2) Remove any duplicates in the DBLP1 file by using Title, Author, Venue and Year as keys to identify duplicates
+3) Remove all special characters found in the title field for both DBLP1 and Scholar, as these will be used as the Foriegn keys
+4) Remove rows with Empty ScholarIDs in the Scholar.csv file, and log them in a file for intervention and inspection
+5) Remove rows with Empty Year Entry in the Scholar.csv file as it is necessary for merging the entities from both Scholar.csv and DBLP1.csv (we could do logic to compare DBLP1 and Scholar and interpret the Year in Scholar.csv)
+6) Hash the title field in the cleaned up DBLP and Scholar files for better comparisons.
+7) Compare both cleaned up files based on Title, Author, and Year. When a match is found store the DBLPID, ScholarID, DBLP Row ID, Scholar Row ID, and an appended column of both DBLP Row ID and Scholar RowID
