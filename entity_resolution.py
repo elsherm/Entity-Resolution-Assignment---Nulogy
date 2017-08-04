@@ -4,6 +4,7 @@ import re
 # Adding csv module to handle csv files and manipulations
 # Adding re module to substitute special characters in title fields
 
+<<<<<< elsherm-patch-3
 ################################### Cleaning Up Scholar file ##########################################################
 
 with open('C:\Users\mohamed\Downloads\Scholar.csv', 'rU') as Scholarcsvfile:
@@ -14,11 +15,11 @@ with open('C:\Users\mohamed\Downloads\Scholar.csv', 'rU') as Scholarcsvfile:
 # removing Empty Scholar IDs
 # removing special characters from title fields
 # converting title to UPPERCASE for comparisons later on
-
+<<<<<< elsherm-patch-3
     for row in Scholarreader:
          if (len(row[0]) <=1):
              Scholarwriterlog.writerow(row)                                             # Write a log file for all the rows with empty Scholar IDs
-         row[1]=re.sub(r'[-"/\.$?í€Œ¢í¢Œåí‰,ƒ\]\[ \t]', '', row[1])                     # removing all special characters from title field
+         row[1]=re.sub(r'[-"/\.$?Ã­â‚¬Å’Â¢Ã­Â¢Å’Ã¥Ã­â€°,Æ’\]\[ \t]', '', row[1])                     # removing all special characters from title field
          row[1] = str.upper(row[1])                                                     # converting title to UPPERCASE for comparisons later on
          Scholarwriter.writerow(row)                                                    # Writing the rows to a new clean file
 
@@ -39,7 +40,7 @@ with open('C:\Users\mohamed\Downloads\DBLP1.csv', 'rU') as DBLPcsvfile:
         if key in entries:                                                              # comparing entries with the keys to remove duplicates
             DBLPwriterlog.writerow(row)
 
-        row[1]=re.sub(r'[-"/\.$?í€Œ¢í¢Œåí‰,ƒ\]\[ \t]', '', row[1])                      # removing all special characters from title field
+        row[1]=re.sub(r'[-"/\.$?Ã­â‚¬Å’Â¢Ã­Â¢Å’Ã¥Ã­â€°,Æ’\]\[ \t]', '', row[1])                      # removing all special characters from title field
         row[1] = str.upper(row[1])                                                      # converting title to UPPERCASE for comparisons later on
         entries.add(key)
         DBLPwriter.writerow(row)                                                        # Writing the rows to a new clean file
@@ -68,4 +69,3 @@ with open('Scholar_clean.csv', 'rb') as scholar:
             if index is not None:
                 writer.writerow([source_id.get(index),row[0],str(index),row[5],str(index)+"_"+str(row[5])]) #If title is a match, write the information to the converged file
 results.close()
-
