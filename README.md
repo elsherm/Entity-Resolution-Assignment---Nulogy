@@ -49,4 +49,4 @@ conf/vldb/Levy96 lDTPyBMtHVwJ 1996        14            1996_14
 The code is divided into 3 sections:
 1) Cleaning up the Scholar file by removing rows with empty Scholar IDs, removing special characters from the titles, and capitalizing the titles
 2) Cleaning up the DBLP1 file by removing duplicated, removing special characters from the titles, and capitalizing the titles
-3) Creating dictionaries for the cleabed DBLP file for more efficient comparison with the cleaned Scholar file, and write the the output of the matched titles in a perfect mapped file, as outlined in the Assignment Instructions section
+3) Creating dictionaries for the cleabed DBLP file for more efficient comparison with the cleaned Scholar file, and write the the output of the matched titles in a perfect mapped file, as outlined in the Bringing Everything Together section
